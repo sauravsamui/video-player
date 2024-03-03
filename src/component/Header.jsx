@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { LOGO_SRC, ROUTES } from "../utils/Constants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MoviesDataContext } from "../context/MoviesDataContext";
 import MoviesData from "../moviesData.json";
 const Header = () => {
   const { setMoviesData, setValue, value } = useContext(MoviesDataContext);
+  const { pathname } = useLocation();
   const handleFilter = (text) => {
     setValue(text);
     if (!text) {
@@ -22,12 +23,14 @@ const Header = () => {
           <h4 className="test-red">Video Player</h4>
         </Link>
       </div>
-      <input
-        type="text"
-        value={value}
-        placeholder="search for videos ex- Dune"
-        onChange={(e) => handleFilter(e.target.value)}
-      />
+      {!pathname.includes(ROUTES.WATCH) && (
+        <input
+          type="text"
+          value={value}
+          placeholder="search for videos ex- Dune"
+          onChange={(e) => handleFilter(e.target.value)}
+        />
+      )}
     </div>
   );
 };

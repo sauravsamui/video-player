@@ -8,7 +8,10 @@ const Watch = () => {
   return (
     <div className="flex">
       <VideoDescription videoKey={videoKey} />
-      <VideoPlaylist videoKey={videoKey} />
+      <div>
+        <h1>Recommended videos</h1>
+        <VideoPlaylist videoKey={videoKey} />
+      </div>
     </div>
   );
 };
