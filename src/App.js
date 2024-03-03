@@ -1,14 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { Outlet } from "react-router-dom";
 import Header from "./component/Header";
+import ContextWrapper from "./context/ContextWrapper";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Outlet />
-    </div>
+    <ContextWrapper>
+      <>
+        <Header />
+        <Outlet />
+      </>
+    </ContextWrapper>
   );
 }
 

@@ -3,6 +3,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"
 import { ROUTES } from "./Constants";
 import App from "../App";
 import { Home } from "../pages/Home";
+import Watch from "../pages/Watch";
 const ProjectRoutes = () => {
   const routes = createBrowserRouter([
     {
@@ -14,8 +15,8 @@ const ProjectRoutes = () => {
           element: <Home />,
         },
         {
-          path: ROUTES.VIDEO_DETAILS,
-          element: <Home />,
+          path: ROUTES.WATCH,
+          element: <Watch />,
         },
         {
           path: ROUTES.NO_PATH,
