@@ -4,7 +4,13 @@ export const MoviesDataContext = createContext(null);
 
 const MoviesDataContextProvider = ({ children }) => {
   const [moviesData, setMoviesData] = useState(MoviesData);
-  return <MoviesDataContext.Provider value={{ moviesData, setMoviesData }}>{children}</MoviesDataContext.Provider>;
+  const [value, setValue] = useState("");
+
+  return (
+    <MoviesDataContext.Provider value={{ moviesData, setMoviesData, value, setValue }}>
+      {children}
+    </MoviesDataContext.Provider>
+  );
 };
 
 export default MoviesDataContextProvider;

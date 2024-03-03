@@ -8,7 +8,10 @@ const VideoDescription = ({ videoKey }) => {
   const selectedVideo = useMemo(() => moviesData.find((el) => el.key === videoKey), [videoKey]);
   return (
     <div>
-      <VideoPlayer src={`${VIDEO_BASE_URL}${videoKey}`} poster={`${IMAGE_BASE_URL}${selectedVideo.poster_path}`} />
+      <VideoPlayer
+        src={`${VIDEO_BASE_URL}${videoKey}/?autoplay=1&mute=1`}
+        poster={`${IMAGE_BASE_URL}${selectedVideo.poster_path}`}
+      />
       <h2>{selectedVideo.title}</h2>
       <p>{selectedVideo.overview}</p>
     </div>
