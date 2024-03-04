@@ -15,7 +15,11 @@ const VideoPlaylist = ({ videoKey }) => {
     <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId="droppable">
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
+          <div
+            className="grid grid-flow-col-1 gap-2  bg-scroll h-1/2"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
             {items.map((item, index) => (
               <DragComponent key={item.id} item={item} index={index} videoKey={videoKey} />
             ))}
