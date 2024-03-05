@@ -29,6 +29,12 @@ https://github.com/sauravsamui/video-player.git
 #### `npm i`
 #### `npm start`
 
+## Deployed Url 
+
+```bash
+https://video-player-fzibvzwaq-sauravsamui.vercel.app
+```
+
 ## Website Flow
 
 - Home page
